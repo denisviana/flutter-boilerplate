@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/widgets.dart';
 import 'package:my_app/core/data/enum/status.dart';
 
 import 'app_exception.dart';
@@ -40,7 +41,7 @@ class Resource<T> {
       // ignore: avoid_catches_without_on_clauses
     } catch (e) {
       final _errorMapped = _errorMapper(e);
-      print(e.toString());
+      debugPrint(e.toString());
       return failed(
         error: _errorMapped,
         data: _errorMapped.data is T ? _errorMapped.data : null,

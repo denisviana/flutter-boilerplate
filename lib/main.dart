@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -13,18 +12,17 @@ import 'flavors/flavor_values.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runZonedGuarded(
-        () async {
+    () async {
       Resource.setErrorMapper(ErrorMapper.from);
       FlavorConfig(
         flavor: Flavor.DEV,
         color: AppColorScheme.primary,
         values: FlavorValues(
-            baseUrl: Environment.baseUrlDev,
-            baseWebSocketUrl: Environment.baseWebSocketUrlDev,
-            imageUrl: Environment.imageUrlDev),
+          baseUrl: Environment.baseUrlDev,
+        ),
       );
       runApp(AppWidget());
     },
-        (error, stackTrace) => debugPrint(stackTrace.toString()),
+    (error, stackTrace) => debugPrint(stackTrace.toString()),
   );
 }

@@ -38,8 +38,9 @@ class AppColorScheme {
       ? RadioLifeDarkThemeColors.backgroundLight
       : RadioLifeLightThemeColors.backgroundLight;
 
-  static Color get border =>
-      AppThemeData.appThemeModeIsDark ? RadioLifeDarkThemeColors.border : RadioLifeLightThemeColors.border;
+  static Color get border => AppThemeData.appThemeModeIsDark
+      ? RadioLifeDarkThemeColors.border
+      : RadioLifeLightThemeColors.border;
 
   static Color get emphasis => AppThemeData.appThemeModeIsDark
       ? RadioLifeDarkThemeColors.emphasis
@@ -57,8 +58,9 @@ class AppColorScheme {
       ? RadioLifeDarkThemeColors.primaryLight
       : RadioLifeLightThemeColors.primaryLight;
 
-  static Color get shadow =>
-      AppThemeData.appThemeModeIsDark ? RadioLifeDarkThemeColors.shadow : RadioLifeLightThemeColors.shadow;
+  static Color get shadow => AppThemeData.appThemeModeIsDark
+      ? RadioLifeDarkThemeColors.shadow
+      : RadioLifeLightThemeColors.shadow;
 
   static Color get success => AppThemeData.appThemeModeIsDark
       ? RadioLifeDarkThemeColors.success
@@ -68,8 +70,9 @@ class AppColorScheme {
       ? RadioLifeDarkThemeColors.successLight
       : RadioLifeLightThemeColors.successLight;
 
-  static Color get error =>
-      AppThemeData.appThemeModeIsDark ? RadioLifeDarkThemeColors.error : RadioLifeLightThemeColors.error;
+  static Color get error => AppThemeData.appThemeModeIsDark
+      ? RadioLifeDarkThemeColors.error
+      : RadioLifeLightThemeColors.error;
 
   static Color get errorLight => AppThemeData.appThemeModeIsDark
       ? RadioLifeDarkThemeColors.errorLight

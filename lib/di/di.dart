@@ -10,5 +10,4 @@ final getIt = GetIt.instance;
   preferRelativeImports: true,
   asExtension: true,
 )
-Future configureInjection([String? env]) async =>
-    getIt.init(environment: env);
+Future configureInjection([String? env]) async => getIt.init(environment: env);

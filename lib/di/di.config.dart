@@ -14,32 +14,26 @@ import '../core/data/helpers/secure_local_storage.dart' as _i5;
 import '../core/data/network/dio_client.dart' as _i7;
 import 'modules/device_module.dart' as _i10;
 import 'modules/local_module.dart' as _i9;
-import 'modules/remote_module.dart'
-    as _i8; // ignore_for_file: unnecessary_lambdas
+import 'modules/remote_module.dart' as _i8; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// an extension to register the provided dependencies inside of [GetIt]
 extension GetItInjectableX on _i1.GetIt {
   /// initializes the registration of provided dependencies inside of [GetIt]
-  Future<_i1.GetIt> init(
-      {String? environment, _i2.EnvironmentFilter? environmentFilter}) async {
+  Future<_i1.GetIt> init({String? environment, _i2.EnvironmentFilter? environmentFilter}) async {
     final gh = _i2.GetItHelper(this, environment, environmentFilter);
     final remoteModule = _$RemoteModule();
     final localModule = _$LocalModule();
     final deviceModule = _$DeviceModule();
     gh.factory<_i3.Dio>(() => remoteModule.provideDio());
     gh.singleton<_i4.FlutterSecureStorage>(localModule.storage);
-    gh.singleton<_i5.SecureLocalStorage>(
-        _i5.SecureLocalStorage(get<_i4.FlutterSecureStorage>()));
-    await gh.factoryAsync<_i6.SharedPreferences>(() => localModule.prefs,
-        preResolve: true);
+    gh.singleton<_i5.SecureLocalStorage>(_i5.SecureLocalStorage(get<_i4.FlutterSecureStorage>()));
+    await gh.factoryAsync<_i6.SharedPreferences>(() => localModule.prefs, preResolve: true);
     gh.factory<String>(() => deviceModule.language, instanceName: 'language');
     gh.singleton<_i3.InterceptorsWrapper>(remoteModule.provideInterceptor(
-        get<_i3.Dio>(),
-        get<String>(instanceName: 'language'),
-        get<_i4.FlutterSecureStorage>()));
-    gh.factory<_i7.DioClient>(() => remoteModule.provideApi(
-        get<_i3.Dio>(), get<_i3.InterceptorsWrapper>()));
+        get<_i3.Dio>(), get<String>(instanceName: 'language'), get<_i4.FlutterSecureStorage>()));
+    gh.factory<_i7.DioClient>(
+        () => remoteModule.provideApi(get<_i3.Dio>(), get<_i3.InterceptorsWrapper>()));
     return this;
   }
 }

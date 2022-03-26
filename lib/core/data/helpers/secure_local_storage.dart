@@ -3,7 +3,6 @@ import 'package:injectable/injectable.dart';
 
 @singleton
 class SecureLocalStorage {
-
   final FlutterSecureStorage storage;
 
   const SecureLocalStorage(this.storage);

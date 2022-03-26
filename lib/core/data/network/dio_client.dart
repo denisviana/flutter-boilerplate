@@ -1,18 +1,17 @@
 import 'package:dio/dio.dart';
 
 class DioClient {
-
   final Dio _dio;
 
   DioClient(this._dio);
 
   Future<T?> delete<T>(
-      String path, {
-        required String data,
-        Map<String, dynamic>? queryParameters,
-        Map<String, dynamic>? headers,
-        Map<String, dynamic>? extra,
-      }) async {
+    String path, {
+    required String data,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+  }) async {
     final res = await _dio.delete<T>(
       path,
       data: data,
@@ -26,12 +25,12 @@ class DioClient {
   }
 
   Future<T?> get<T>(
-      String path, {
-        Map<String, dynamic>? queryParameters,
-        Map<String, dynamic>? headers,
-        Map<String, dynamic>? extra,
-        ProgressCallback? onReceiveProgress,
-      }) async {
+    String path, {
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ProgressCallback? onReceiveProgress,
+  }) async {
     final res = await _dio.get<T>(
       path,
       onReceiveProgress: onReceiveProgress,
@@ -45,14 +44,14 @@ class DioClient {
   }
 
   Future<T?> patch<T>(
-      String path, {
-        required String data,
-        Map<String, dynamic>? queryParameters,
-        Map<String, dynamic>? headers,
-        Map<String, dynamic>? extra,
-        ProgressCallback? onSendProgress,
-        ProgressCallback? onReceiveProgress,
-      }) async {
+    String path, {
+    required String data,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
     final res = await _dio.patch<T>(
       path,
       data: data,
@@ -68,14 +67,14 @@ class DioClient {
   }
 
   Future<T?> post<T>(
-      String path, {
-        required String data,
-        Map<String, dynamic>? queryParameters,
-        Map<String, dynamic>? headers,
-        Map<String, dynamic>? extra,
-        ProgressCallback? onSendProgress,
-        ProgressCallback? onReceiveProgress,
-      }) async {
+    String path, {
+    required String data,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
     final res = await _dio.post<T>(
       path,
       data: data,
@@ -91,14 +90,14 @@ class DioClient {
   }
 
   Future<T?> put<T>(
-      String path, {
-        required String data,
-        Map<String, dynamic>? queryParameters,
-        Map<String, dynamic>? headers,
-        Map<String, dynamic>? extra,
-        ProgressCallback? onSendProgress,
-        ProgressCallback? onReceiveProgress,
-      }) async {
+    String path, {
+    required String data,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
     final res = await _dio.put<T>(
       path,
       data: data,

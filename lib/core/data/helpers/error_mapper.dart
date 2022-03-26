@@ -5,25 +5,25 @@ import '../model/app_exception.dart';
 
 class ErrorMapper {
   static AppException from(dynamic e) => e is DioError
-        ? AppException(
-            exception: e,
-            description: _dioError(e),
-          )
-        : e is PlatformException
-            ? AppException(exception: e, description: e.message)
-            : e is NoSuchMethodError
-                ? AppException(exception: e, description: '')
-                : e is AppException
-                    ? e
-                    : e is NoSuchMethodError
-                        ? AppException(
-                            exception: null,
-                            description: '',
-                          )
-                        : AppException(
-                            exception: e,
-                            description: e.toString(),
-                          );
+      ? AppException(
+          exception: e,
+          description: _dioError(e),
+        )
+      : e is PlatformException
+          ? AppException(exception: e, description: e.message)
+          : e is NoSuchMethodError
+              ? AppException(exception: e, description: '')
+              : e is AppException
+                  ? e
+                  : e is NoSuchMethodError
+                      ? AppException(
+                          exception: null,
+                          description: '',
+                        )
+                      : AppException(
+                          exception: e,
+                          description: e.toString(),
+                        );
 
   static String _dioError(DioError error) {
     switch (error.type) {

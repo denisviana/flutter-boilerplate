@@ -5,13 +5,9 @@ import 'package:my_app/app/utils/string_utils.dart';
 enum Flavor { DEV, PRODUCTION }
 
 class FlavorValues {
-  FlavorValues(
-      {required this.baseUrl,
-      required this.baseWebSocketUrl,
-      required this.imageUrl});
+  FlavorValues({required this.baseUrl});
+
   final String baseUrl;
-  final String baseWebSocketUrl;
-  final String imageUrl;
 }
 
 class FlavorConfig {
@@ -45,5 +41,6 @@ class FlavorConfig {
   static FlavorConfig get instance => _instance;
 
   static bool isProduction() => _instance.flavor == Flavor.PRODUCTION;
+
   static bool isDevelopment() => _instance.flavor == Flavor.DEV;
 }

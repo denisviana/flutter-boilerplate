@@ -28,9 +28,7 @@ abstract class RemoteModule {
 
   @singleton
   InterceptorsWrapper provideInterceptor(
-          Dio dio,
-          @Named('language') String language,
-          FlutterSecureStorage flutterSecureStorage) =>
+          Dio dio, @Named('language') String language, FlutterSecureStorage flutterSecureStorage) =>
       MyAppInterceptor.init(dio, language, flutterSecureStorage);
 
   DioClient provideApi(Dio dio, InterceptorsWrapper interceptor) {

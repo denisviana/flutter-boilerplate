@@ -22,7 +22,7 @@ linter:
     - avoid_js_rounded_ints
     - avoid_null_checks_in_equality_operators
     - avoid_positional_boolean_parameters
-    # - avoid_print
+    - avoid_print
     - avoid_private_typedef_functions
     - avoid_relative_lib_imports
     - avoid_renaming_method_parameters
@@ -46,7 +46,7 @@ linter:
     - cancel_subscriptions
     # - cascade_invocations
     - close_sinks
-    - comment_references
+    # - comment_references
     - constant_identifier_names
     - control_flow_in_finally
     # - curly_braces_in_flow_control_structures
@@ -58,7 +58,6 @@ linter:
     - file_names
     - flutter_style_todos
     - hash_and_equals
-    - implementation_imports
     - invariant_booleans
     - iterable_contains_unrelated_type
     - join_return_with_assignment
@@ -152,7 +151,11 @@ linter:
     - use_to_and_as_if_applicable
     - valid_regexps
     - void_checks
+
 analyzer:
+  plugins:
+    - dart_code_metrics
+
   exclude:
     - lib/**.g.dart
     - lib/**generated
@@ -161,6 +164,9 @@ analyzer:
     - lib/generated/intl/messages_en.dart
     - lib/**l10n.dart
     - lib/graphql/**
+    - ios/**
+    - lib/app/helpers/show_modal_bottom_sheet_custom.dart
+
   errors:
     #    avoid_as: error
     always_declare_return_types: error
@@ -210,7 +216,7 @@ analyzer:
     cancel_subscriptions: error
     cascade_invocations: error
     close_sinks: error
-    comment_references: warning
+    # comment_references: error
     constant_identifier_names: error
     control_flow_in_finally: error
     curly_braces_in_flow_control_structures: error
@@ -222,7 +228,6 @@ analyzer:
     file_names: error
     flutter_style_todos: error
     hash_and_equals: error
-    implementation_imports: error
     invariant_booleans: error
     iterable_contains_unrelated_type: error
     join_return_with_assignment: error
@@ -317,3 +322,13 @@ analyzer:
     use_to_and_as_if_applicable: error
     valid_regexps: error
     void_checks: error
+    todo: ignore
+
+dart_code_metrics:
+  anti-patterns:
+  metrics:
+    - lines-of-code: 100
+  metrics-exclude:
+  rules:
+    - avoid-non-null-assertion:
+        severity: error

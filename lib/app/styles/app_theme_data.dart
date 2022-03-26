@@ -18,11 +18,9 @@ class AppThemeData extends ThemeDataMyApp {
     _appThemeModeIsDark = isDark;
   }
 
-  static bool get appThemeModeIsDark =>
-      _appThemeModeIsDark ?? ThemeDataMyApp.isDark ?? true;
+  static bool get appThemeModeIsDark => _appThemeModeIsDark ?? ThemeDataMyApp.isDark ?? true;
 
-  static ThemeData get themeData =>
-      appThemeModeIsDark ? themeDataDark : themeDataLight;
+  static ThemeData get themeData => appThemeModeIsDark ? themeDataDark : themeDataLight;
   static ThemeMode get themeMode => ThemeDataMyApp.isDark == null
       ? ThemeMode.system
       : appThemeModeIsDark
@@ -31,13 +29,10 @@ class AppThemeData extends ThemeDataMyApp {
 
   static final ThemeData themeDataLight = ThemeData(
     brightness: Brightness.light,
-    accentColorBrightness: Brightness.light,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     primarySwatch: AppColorScheme.primarySwatchLight,
-    accentColor: AppColorScheme.accentColorLight,
     textTheme: AppTextTheme.textTheme,
-    bottomSheetTheme:
-        const BottomSheetThemeData(backgroundColor: Colors.transparent),
+    bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.transparent),
     tabBarTheme: const TabBarTheme(
       labelStyle: TextStyle(
           fontSize: AppFontSize.primary,
@@ -58,10 +53,8 @@ class AppThemeData extends ThemeDataMyApp {
       cursorColor: AppColorScheme.success,
       selectionHandleColor: AppColorScheme.success,
     ),
-    appBarTheme: const AppBarTheme(
-        backgroundColor: RadioLifeLightThemeColors.background,
-        brightness: Brightness.light,
-        elevation: 0),
+    appBarTheme:
+        const AppBarTheme(backgroundColor: RadioLifeLightThemeColors.background, elevation: 0),
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
         TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
@@ -81,16 +74,13 @@ class AppThemeData extends ThemeDataMyApp {
       elevation: 0,
     ),
     buttonTheme: ButtonThemeData(
-        colorScheme: AppColorScheme.colorSchemeLight,
-        textTheme: ButtonTextTheme.primary),
+        colorScheme: AppColorScheme.colorSchemeLight, textTheme: ButtonTextTheme.primary),
   );
 
   static final ThemeData themeDataDark = ThemeData(
     visualDensity: VisualDensity.adaptivePlatformDensity,
     brightness: Brightness.dark,
-    accentColorBrightness: Brightness.dark,
     primarySwatch: AppColorScheme.primarySwatchDark,
-    accentColor: AppColorScheme.accentColorDark,
     splashColor: Colors.transparent,
     highlightColor: Colors.transparent,
     tabBarTheme: const TabBarTheme(
@@ -105,8 +95,7 @@ class AppThemeData extends ThemeDataMyApp {
       labelPadding: EdgeInsets.symmetric(horizontal: AppSpacing.extraSmall),
     ),
     textTheme: AppTextTheme.textTheme,
-    bottomSheetTheme:
-        const BottomSheetThemeData(backgroundColor: Colors.transparent),
+    bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.transparent),
     scaffoldBackgroundColor: RadioLifeDarkThemeColors.background,
     colorScheme: AppColorScheme.colorSchemeDark,
     textSelectionTheme: TextSelectionThemeData(
@@ -117,7 +106,6 @@ class AppThemeData extends ThemeDataMyApp {
     appBarTheme: const AppBarTheme(
       backgroundColor: RadioLifeDarkThemeColors.background,
       elevation: 0,
-      brightness: Brightness.dark,
     ),
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
@@ -137,7 +125,6 @@ class AppThemeData extends ThemeDataMyApp {
       elevation: 0,
     ),
     buttonTheme: ButtonThemeData(
-        colorScheme: AppColorScheme.colorSchemeDark,
-        textTheme: ButtonTextTheme.primary),
+        colorScheme: AppColorScheme.colorSchemeDark, textTheme: ButtonTextTheme.primary),
   );
 }
