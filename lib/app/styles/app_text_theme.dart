@@ -2,61 +2,69 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextTheme {
-  /// https://material.io/design/typography/the-type-system.html#type-scale - Helps to create textTheme
+  /// Define o tema de texto usando o sistema de tipografia do Material Design 3.
+  static TextTheme get textTheme => _textThemeMontserrat;
 
-  static TextTheme get textTheme => textThemeMontserrat;
-
-  static TextTheme textThemeMontserrat = TextTheme(
-    headline1: GoogleFonts.montserrat(
-      fontSize: 96,
-      fontWeight: FontWeight.w300,
-    ),
-    headline2: GoogleFonts.montserrat(
-      fontSize: 60,
-      fontWeight: FontWeight.w300,
-    ),
-    headline3: GoogleFonts.montserrat(
-      fontSize: 48,
+  static final TextTheme _textThemeMontserrat = TextTheme(
+    displayLarge: GoogleFonts.montserrat(
+      fontSize: 57,
       fontWeight: FontWeight.w400,
     ),
-    headline4: GoogleFonts.montserrat(
-      fontSize: 34,
+    displayMedium: GoogleFonts.montserrat(
+      fontSize: 45,
       fontWeight: FontWeight.w400,
     ),
-    headline5: GoogleFonts.montserrat(
+    displaySmall: GoogleFonts.montserrat(
+      fontSize: 36,
+      fontWeight: FontWeight.w400,
+    ),
+    headlineLarge: GoogleFonts.montserrat(
+      fontSize: 32,
+      fontWeight: FontWeight.w400,
+    ),
+    headlineMedium: GoogleFonts.montserrat(
+      fontSize: 28,
+      fontWeight: FontWeight.w400,
+    ),
+    headlineSmall: GoogleFonts.montserrat(
       fontSize: 24,
-      fontWeight: FontWeight.bold,
-    ),
-    headline6: GoogleFonts.montserrat(
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
-    ),
-    subtitle1: GoogleFonts.montserrat(
-      fontSize: 16,
       fontWeight: FontWeight.w400,
     ),
-    subtitle2: GoogleFonts.montserrat(
+    titleLarge: GoogleFonts.montserrat(
+      fontSize: 22,
+      fontWeight: FontWeight.w400,
+    ),
+    titleMedium: GoogleFonts.montserrat(
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+    ),
+    titleSmall: GoogleFonts.montserrat(
       fontSize: 14,
       fontWeight: FontWeight.w500,
     ),
-    bodyText1: GoogleFonts.montserrat(
+    bodyLarge: GoogleFonts.montserrat(
       fontSize: 16,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w400,
     ),
-    bodyText2: GoogleFonts.montserrat(
-      fontSize: 16,
-    ),
-    button: GoogleFonts.montserrat(
+    bodyMedium: GoogleFonts.montserrat(
       fontSize: 14,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w400,
     ),
-    caption: GoogleFonts.montserrat(
+    bodySmall: GoogleFonts.montserrat(
       fontSize: 12,
       fontWeight: FontWeight.w400,
     ),
-    overline: GoogleFonts.montserrat(
-      fontSize: 10,
-      fontWeight: FontWeight.w400,
+    labelLarge: GoogleFonts.montserrat(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+    ),
+    labelMedium: GoogleFonts.montserrat(
+      fontSize: 12,
+      fontWeight: FontWeight.w500,
+    ),
+    labelSmall: GoogleFonts.montserrat(
+      fontSize: 11,
+      fontWeight: FontWeight.w500,
     ),
   );
 }

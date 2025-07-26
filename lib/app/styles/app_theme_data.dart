@@ -33,7 +33,7 @@ class AppThemeData extends ThemeDataMyApp {
     primarySwatch: AppColorScheme.primarySwatchLight,
     textTheme: AppTextTheme.textTheme,
     bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.transparent),
-    tabBarTheme: const TabBarTheme(
+    tabBarTheme: const TabBarThemeData(
       labelStyle: TextStyle(
           fontSize: AppFontSize.primary,
           fontWeight: AppFontWeight.semiBold,
@@ -83,7 +83,7 @@ class AppThemeData extends ThemeDataMyApp {
     primarySwatch: AppColorScheme.primarySwatchDark,
     splashColor: Colors.transparent,
     highlightColor: Colors.transparent,
-    tabBarTheme: const TabBarTheme(
+    tabBarTheme: const TabBarThemeData(
       labelStyle: TextStyle(
           fontSize: AppFontSize.primary,
           fontWeight: AppFontWeight.semiBold,

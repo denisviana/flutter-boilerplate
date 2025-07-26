@@ -27,13 +27,13 @@ class ErrorMapper {
 
   static String _dioError(DioError error) {
     switch (error.type) {
-      case DioErrorType.sendTimeout:
-      case DioErrorType.connectTimeout:
-      case DioErrorType.receiveTimeout:
+      case DioExceptionType.sendTimeout:
+      case DioExceptionType.connectionTimeout:
+      case DioExceptionType.receiveTimeout:
         return '';
-      case DioErrorType.cancel:
+      case DioExceptionType.cancel:
         return '';
-      case DioErrorType.response:
+      case DioExceptionType.badResponse:
       default:
         break;
     }
